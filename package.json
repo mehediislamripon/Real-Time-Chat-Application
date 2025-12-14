@@ -1,21 +1,39 @@
 {
-   "name": "ChatApplication",
+   "name": "chatapplication",
    "version": "1.0.0",
    "description": "",
    "main": "app.js",
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node app.js"
+      "build": "npm run build:server && npm run build:client",
+      "build:server": "tsc",
+      "build:client": "webpack --config webpack.config.js",
+      "start": "node dist/server.js",
+      "dev": "ts-node src/server.ts",
+      "dev:watch": "nodemon --exec ts-node src/server.ts"
    },
    "keywords": [],
    "author": "Mehedi Islam Ripon",
    "license": "ISC",
    "dependencies": {
-      "express": "^4.17.1",
-      "moment-timezone": "^0.5.33",
-      "socket.io": "^4.1.1"
+      "express": "^5.2.1",
+      "moment-timezone": "^0.6.0",
+      "socket.io": "^4.8.1"
    },
    "engines": {
       "node": ">=10.0.0"
+   },
+   "devDependencies": {
+      "@types/express": "^5.0.6",
+      "@types/moment-timezone": "^0.5.13",
+      "@types/node": "^25.0.2",
+      "@types/socket.io-client": "^1.4.36",
+      "nodemon": "^3.1.11",
+      "ts-loader": "^9.5.4",
+      "ts-node": "^10.9.2",
+      "typescript": "^5.9.3",
+      "webpack": "^5.103.0",
+      "webpack-cli": "^6.0.1",
+      "webpack-dev-middleware": "^7.4.5"
    }
 }
