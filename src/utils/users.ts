@@ -47,6 +47,7 @@ function userLeave(id: string): User | undefined {
    if (index !== -1) {
       return users.splice(index, 1)[0];
    }
+   return undefined;
 }
 
 /**

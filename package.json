@@ -1,18 +1,34 @@
 {
-   "name": "chatapplication",
-   "version": "1.0.0",
-   "description": "",
-   "main": "app.js",
+   "name": "xeroxchat",
+   "version": "2.0.0",
+   "description": "Production-grade real-time chat application with TypeScript, Express, and Socket.IO",
+   "main": "dist/main.js",
    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
       "build": "npm run build:server && npm run build:client",
       "build:server": "tsc",
       "build:client": "webpack --config webpack.config.js",
-      "start": "node dist/server.js",
-      "dev": "ts-node src/server.ts",
-      "dev:watch": "nodemon --exec ts-node src/server.ts"
+      "start": "node dist/main.js",
+      "start:legacy": "node dist/server.js",
+      "dev": "ts-node src/main.ts",
+      "dev:legacy": "ts-node src/server.ts",
+      "dev:watch": "nodemon",
+      "lint": "eslint src/**/*.ts --fix",
+      "lint:check": "eslint src/**/*.ts",
+      "typecheck": "tsc --noEmit",
+      "test": "vitest run",
+      "test:watch": "vitest",
+      "test:coverage": "vitest run --coverage",
+      "test:ui": "vitest --ui",
+      "clean": "rm -rf dist",
+      "prepublishOnly": "npm run build"
    },
-   "keywords": [],
+   "keywords": [
+      "chat",
+      "real-time",
+      "socket.io",
+      "typescript",
+      "express"
+   ],
    "author": "Mehedi Islam Ripon",
    "license": "ISC",
    "dependencies": {
@@ -21,19 +37,23 @@
       "socket.io": "^4.8.1"
    },
    "engines": {
-      "node": ">=10.0.0"
+      "node": ">=18.0.0"
    },
    "devDependencies": {
       "@types/express": "^5.0.6",
       "@types/moment-timezone": "^0.5.13",
       "@types/node": "^25.0.2",
       "@types/socket.io-client": "^1.4.36",
+      "@vitest/coverage-v8": "^2.1.9",
+      "@vitest/ui": "^2.1.9",
       "nodemon": "^3.1.11",
       "ts-loader": "^9.5.4",
       "ts-node": "^10.9.2",
       "typescript": "^5.9.3",
+      "vitest": "^2.1.9",
       "webpack": "^5.103.0",
       "webpack-cli": "^6.0.1",
-      "webpack-dev-middleware": "^7.4.5"
+      "webpack-dev-middleware": "^7.4.5",
+      "zod": "^4.3.5"
    }
 }

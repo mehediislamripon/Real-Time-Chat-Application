@@ -20,7 +20,7 @@ const io = new SocketIOServer(server);
 app.use(express.static(path.join(__dirname, "../public")));
 
 const BOT_NAME = "XeroxChat Bot";
-const PORT = process.env.PORT || 3000;
+const PORT = process.env['PORT'] ?? 3000;
 
 /**
  * Socket.IO connection handler

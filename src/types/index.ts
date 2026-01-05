@@ -1,30 +1,72 @@
 /**
- * Type definitions for chat application
+ * Core Type Definitions for Chat Application
+ * All types are immutable for safety
  */
 
+// ============================================
+// User Types
+// ============================================
+
 export interface User {
-   id: string;
-   username: string;
-   room: string;
+  readonly id: string;
+  readonly username: string;
+  readonly room: string;
 }
 
-export interface UserJoinResult {
-   error?: string;
-   user?: User;
+export interface UserWithMetadata extends User {
+  readonly joinedAt: Date;
+  readonly lastActivity?: Date;
 }
+
+// ============================================
+// Message Types
+// ============================================
 
 export interface FormattedMessage {
-   username: string;
-   text: string;
-   time: string;
+  readonly username: string;
+  readonly text: string;
+  readonly time: string;
+}
+
+export interface MessageWithId extends FormattedMessage {
+  readonly id: string;
+  readonly timestamp: number;
+}
+
+// ============================================
+// Room Types
+// ============================================
+
+export interface RoomInfo {
+  readonly name: string;
+  readonly userCount: number;
+  readonly createdAt: Date;
 }
 
 export interface RoomUsers {
-   room: string;
-   users: User[];
+  readonly room: string;
+  readonly users: readonly User[];
 }
 
-export interface JoinRoomData {
-   username: string;
-   room: string;
+// ============================================
+// Legacy Types (for backward compatibility)
+// ============================================
+
+/** @deprecated Use Result<User, UserError> from errors.ts instead */
+export interface UserJoinResult {
+  error?: string;
+  user?: User;
 }
+
+/** @deprecated Use JoinRoomPayload from socket.types.ts instead */
+export interface JoinRoomData {
+  username: string;
+  room: string;
+}
+
+// ============================================
+// Re-exports
+// ============================================
+
+export * from './socket.types';
+export * from './errors';
