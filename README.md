@@ -2,52 +2,52 @@
 
 A production-ready real-time chat application built with **Node.js, Express.js, Socket.IO, and TypeScript**. Designed for **long-term maintainability, scalability, and enterprise-grade quality**.
 
-## ✨ Key Features
+## Key Features
 
 ### Core Functionality
-- ⚡ Real-time messaging using Socket.IO with fully typed events
-- 🏠 Multiple chat rooms with active user tracking
-- 👥 User management with duplicate username prevention
-- 📱 Responsive UI with modern styling
-- 🕐 Server-side message formatting with timezone support (Asia/Dhaka)
+- Real-time messaging using Socket.IO with fully typed events
+- Multiple chat rooms with active user tracking
+- User management with duplicate username prevention
+- Responsive UI with modern styling
+- Server-side message formatting with timezone support (Asia/Dhaka)
 
 ### Production Quality
-- 🔒 **Zero `any` usage** - 100% type-safe TypeScript with strict mode
-- ✅ **Input validation** - Zod schemas with XSS sanitization
-- 🛡️ **Error handling** - Custom typed error classes and recovery
-- 📊 **Structured logging** - Production-ready logger with levels
-- 🧪 **Full test coverage** - Vitest with 39+ passing tests
-- ⚙️ **Environment validation** - Typed config management
-- 🚀 **Graceful shutdown** - Proper process cleanup and signal handling
-- 📦 **Scalability ready** - Redis adapter types included
+- **Zero `any` usage** - 100% type-safe TypeScript with strict mode
+- **Input validation** - Zod schemas with XSS sanitization
+- **Error handling** - Custom typed error classes and recovery
+- **Structured logging** - Production-ready logger with levels
+- **Full test coverage** - Vitest with 39+ passing tests
+- **Environment validation** - Typed config management
+- **Graceful shutdown** - Proper process cleanup and signal handling
+- **Scalability ready** - Redis adapter types included
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Real-Time-Chat-Application/
 ├── src/                                    # Server source (TypeScript)
-│   ├── main.ts                             # ✨ NEW: Main entry point with graceful shutdown
+│   ├── main.ts                             # NEW: Main entry point with graceful shutdown
 │   ├── server.ts                           # Legacy entry point (still supported)
 │   ├── config/
-│   │   └── index.ts                        # ✨ NEW: Env validation & config management
+│   │   └── index.ts                        # NEW: Env validation & config management
 │   ├── app/
-│   │   └── express.ts                      # ✨ NEW: Express app factory with middleware
+│   │   └── express.ts                      # NEW: Express app factory with middleware
 │   ├── socket/
 │   │   ├── index.ts
-│   │   ├── handlers.ts                     # ✨ NEW: Decoupled event handlers
-│   │   └── server.ts                       # ✨ NEW: Typed Socket.IO factory
+│   │   ├── handlers.ts                     # NEW: Decoupled event handlers
+│   │   └── server.ts                       # NEW: Typed Socket.IO factory
 │   ├── services/
 │   │   ├── index.ts
-│   │   ├── user.service.ts                 # ✨ NEW: Class-based with DI support
-│   │   ├── message.service.ts              # ✨ NEW: Message formatting service
-│   │   └── logger.service.ts               # ✨ NEW: Structured logging
+│   │   ├── user.service.ts                 # NEW: Class-based with DI support
+│   │   ├── message.service.ts              # NEW: Message formatting service
+│   │   └── logger.service.ts               # NEW: Structured logging
 │   ├── types/
 │   │   ├── index.ts                        # Core types (readonly/immutable)
-│   │   ├── socket.types.ts                 # ✨ NEW: Strongly-typed socket events
-│   │   └── errors.ts                       # ✨ NEW: Custom error classes
+│   │   ├── socket.types.ts                 # NEW: Strongly-typed socket events
+│   │   └── errors.ts                       # NEW: Custom error classes
 │   ├── validation/
 │   │   ├── index.ts
-│   │   └── schemas.ts                      # ✨ NEW: Zod validation schemas
+│   │   └── schemas.ts                      # NEW: Zod validation schemas
 │   └── utils/
 │       ├── messages.ts                     # Legacy (deprecated - use message.service)
 │       └── users.ts                        # Legacy (deprecated - use user.service)
@@ -60,7 +60,7 @@ Real-Time-Chat-Application/
 │   │   └── socket.io.d.ts
 │   └── css/
 │       └── style.css
-├── tests/                                  # ✨ NEW: Test suite
+├── tests/                                  # NEW: Test suite
 │   ├── services/
 │   │   ├── user.service.test.ts
 │   │   └── message.service.test.ts
@@ -69,18 +69,18 @@ Real-Time-Chat-Application/
 │   └── validation/
 │       └── schemas.test.ts
 ├── dist/                                   # Compiled output (generated)
-├── tsconfig.json                           # ✨ UPDATED: Extra strict rules
-├── vitest.config.ts                        # ✨ NEW: Vitest configuration
-├── nodemon.json                            # ✨ UPDATED: For main.ts
+├── tsconfig.json                           # UPDATED: Extra strict rules
+├── vitest.config.ts                        # NEW: Vitest configuration
+├── nodemon.json                            # UPDATED: For main.ts
 ├── webpack.config.js
-├── .env.example                            # ✨ NEW: Environment template
-├── package.json                            # ✨ UPDATED: New scripts & deps
+├── .env.example                            # NEW: Environment template
+├── package.json                            # UPDATED: New scripts & deps
 └── README.md                               # This file
 ```
 
-**✨ = New or significantly improved in v2.0**
+** = New or significantly improved in v2.0**
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js >= 18.0.0
@@ -109,7 +109,7 @@ cp .env.example .env
 # DEFAULT_TIMEZONE=Asia/Dhaka
 ```
 
-## 📖 Running the Application
+## Running the Application
 
 ### Development
 
@@ -136,7 +136,7 @@ npm run build
 npm start
 ```
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Run all tests
@@ -152,7 +152,7 @@ npm test:coverage
 npm test:ui
 ```
 
-## ✅ Available Scripts
+## Available Scripts
 
 | Script | Purpose |
 |--------|---------|
@@ -171,7 +171,7 @@ npm test:ui
 | `npm run lint:check` | Check linting issues |
 | `npm run clean` | Remove dist/ directory |
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 ### Layered Architecture
 
@@ -214,10 +214,10 @@ const user: User = Object.freeze({
 // 4. Error Handling
 type Result<T, E = AppError> = 
   | { success: true; data: T }
-  | { success: false; error: E };
+  | { success: false, error: E };
 ```
 
-## 🔐 Type System Features
+## Type System Features
 
 ### Strict TypeScript Configuration
 ```jsonc
@@ -250,17 +250,17 @@ interface User {
 ```typescript
 type Result<T, E = AppError> = 
   | { success: true; data: T }
-  | { success: false; error: E };
+  | { success: false, error: E };
 
 // Type guard enforced at compile time
 if (result.success) {
-  console.log(result.data);  // ✅ Guaranteed to exist
+  console.log(result.data);  // Guaranteed to exist
 } else {
-  console.log(result.error); // ✅ Guaranteed to exist
+  console.log(result.error); // Guaranteed to exist
 }
 ```
 
-## 🎯 Key Services
+## Key Services
 
 ### UserService
 ```typescript
@@ -294,7 +294,7 @@ class Logger {
 }
 ```
 
-## ✔️ Validation & Security
+## Validation & Security
 
 ### Input Validation with Zod
 
@@ -328,7 +328,7 @@ const room = roomSchema.parse(input);
 - `X-Frame-Options: DENY`
 - `X-XSS-Protection: 1; mode=block`
 
-## 🧪 Testing
+## Testing
 
 ### Test Coverage
 - **Unit Tests**: UserService, MessageService, Validation schemas
@@ -357,7 +357,7 @@ describe('Validation Schemas', () => {
 });
 ```
 
-## 📊 Logging Example
+## Logging Example
 
 ```
 [INFO] 2026-01-05T10:34:01.993Z [UserService] User joined {
@@ -380,7 +380,7 @@ describe('Validation Schemas', () => {
 }
 ```
 
-## 🚀 Scalability Path
+## Scalability Path
 
 ### Current (Single Instance)
 ```
@@ -403,7 +403,7 @@ import { createAdapter } from '@socket.io/redis-adapter';
 io.adapter(createAdapter(pubClient, subClient));
 ```
 
-## 📦 Dependencies
+## Dependencies
 
 ### Production
 | Package | Version | Purpose |
@@ -423,7 +423,7 @@ io.adapter(createAdapter(pubClient, subClient));
 | @vitest/ui | ^2.1.0 | **NEW**: Test UI |
 | webpack | ^5.103.0 | Bundling |
 
-## 🔄 Migration from v1.0 to v2.0
+## Migration from v1.0 to v2.0
 
 ### Backward Compatibility
 The v1.0 code still works! You can:
@@ -444,13 +444,13 @@ import { messageService } from './services/message.service';
 // v2.0 benefits
 const result = userService.join(id, username, room);
 if (result.success) {
-  const user = result.data;  // ✅ Type-safe
+  const user = result.data;  // Type-safe
 } else {
-  console.error(result.error.message);  // ✅ Type-safe errors
+  console.error(result.error.message);  // Type-safe errors
 }
 ```
 
-## 🎮 Using the Application
+## Using the Application
 
 ### 1. Start the Server
 ```bash
@@ -479,7 +479,7 @@ Navigate to `http://localhost:3000`
 
 (Or create your own custom room name!)
 
-## 💡 Code Examples
+## Code Examples
 
 ### Handling Socket Events (Type-Safe)
 
@@ -494,10 +494,10 @@ socket.on(SocketEvents.JOIN_ROOM, (data: JoinRoomPayload) => {
   if (result.success) {
     const user = result.data;
     socket.join(user.room);
-    // ✅ Fully type-safe, no `any` type
+    // Fully type-safe, no `any` type
   } else {
     socket.emit(SocketEvents.USERNAME_ERROR, result.error.message);
-    // ✅ Error type guaranteed
+    // Error type guaranteed
   }
 });
 ```
@@ -514,10 +514,10 @@ const validationResult = validate(joinRoomSchema, {
 
 if (validationResult.success) {
   const { username, room } = validationResult.data;
-  // ✅ Data is validated and typed
+  // Data is validated and typed
 } else {
   console.error(validationResult.error.message);
-  // ✅ Error details are available
+  // Error details are available
 }
 ```
 
@@ -543,7 +543,7 @@ logger.info('Chat started', { username, room, userCount: count });
 logger.error('Connection failed', error, { socketId });
 ```
 
-## 📋 Best Practices Implemented
+## Best Practices Implemented
 
 | Practice | Implementation |
 |----------|-----------------|
@@ -560,7 +560,7 @@ logger.error('Connection failed', error, { socketId });
 | **Backward Compat** | Old code still works alongside new code |
 | **Scalability** | Redis adapter types included |
 
-## 🚀 Future Enhancements
+## Future Enhancements
 
 ### Short Term
 - [ ] Add Redis adapter for multi-instance scaling
@@ -586,7 +586,7 @@ logger.error('Connection failed', error, { socketId });
 - [ ] Admin panel
 - [ ] Mobile app (React Native)
 
-## 📚 Learn More
+## Learn More
 
 ### TypeScript
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
@@ -602,7 +602,7 @@ logger.error('Connection failed', error, { socketId });
 ### Testing
 - [Vitest Documentation](https://vitest.dev/)
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -617,7 +617,7 @@ logger.error('Connection failed', error, { socketId });
 - Follow existing code style
 - Update README if adding features
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Port Already in Use
 ```bash
@@ -653,7 +653,7 @@ rm -rf dist/
 npm run build
 ```
 
-## 📊 Project Stats
+## Project Stats
 
 | Metric | Value |
 |--------|-------|
@@ -662,22 +662,22 @@ npm run build
 | Test Count | 39+ |
 | Test Coverage Target | 80%+ |
 | Supported Node | >=18.0.0 |
-| Production Ready | ✅ Yes |
+| Production Ready | Yes |
 
-## 📄 License
+## License
 
 ISC - See LICENSE file for details
 
-## 👨‍💻 Author
+## Author
 
 **Mehedi Islam Ripon**
 
 ### Contributions & Support
 
-- ⭐ Star this repo if you find it helpful!
-- 🐛 Report bugs via GitHub Issues
-- 💬 Discuss improvements in Discussions
-- 🚀 Submit PRs for new features
+- Star this repo if you find it helpful!
+- Report bugs via GitHub Issues
+- Discuss improvements in Discussions
+- Submit PRs for new features
 
 ---
 
